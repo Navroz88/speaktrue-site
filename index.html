@@ -1,1 +1,225 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpeakTrue — affirmations in your own voice</title>
+<meta name="description" content="SpeakTrue is an iPhone app for recording affirmations in your own voice and playing them back. 1,200 affirmations to start from. One-time purchase, no subscription.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F6EFE4;
+    --bone-deep:#EFE5D6;
+    --ink:#1E2B1F;
+    --ink-soft:#4A5A4B;
+    --sage:#7C9471;
+    --sage-deep:#5C7355;
+    --rose:#C0817E;
+    --measure:34rem;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:"Karla",system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.12;margin:0}
+  p{margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  .wrap{width:min(1080px,92vw);margin-inline:auto}
+
+  header{padding:26px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:"Fraunces",Georgia,serif;font-size:23px;font-weight:600;letter-spacing:-.01em;text-decoration:none}
+  .mark span{color:var(--sage-deep)}
+
+  .btn{
+    display:inline-block;background:var(--sage-deep);color:#fff;
+    text-decoration:none;font-weight:600;font-size:15px;
+    padding:12px 22px;border-radius:999px;
+    transition:background .18s ease;
+  }
+  .btn:hover{background:var(--ink)}
+  .btn:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+  .btn.big{font-size:17px;padding:15px 32px}
+
+  .hero{padding:56px 0 40px;text-align:center}
+  .hero h1{
+    font-size:clamp(2.4rem,6.4vw,4.15rem);
+    letter-spacing:-.022em;
+    max-width:17ch;margin-inline:auto;
+  }
+  .hero .lede{
+    margin:26px auto 0;max-width:var(--measure);
+    font-size:1.16rem;color:var(--ink-soft);
+  }
+  .hero .cta{margin-top:34px}
+  .hero .fine{margin-top:14px;font-size:.92rem;color:var(--ink-soft)}
+  .shot-lead{margin:52px auto 0;width:min(300px,72vw)}
+  .shot-lead img{border-radius:32px;box-shadow:0 26px 60px rgba(30,43,31,.16)}
+
+  .rule{display:block;width:min(760px,88vw);margin:64px auto;height:34px;opacity:.5}
+
+  .why{max-width:var(--measure);margin-inline:auto;text-align:center;padding:0 0 8px}
+  .why h2{font-size:clamp(1.7rem,3.5vw,2.3rem);letter-spacing:-.015em}
+  .why p{margin-top:20px;color:var(--ink-soft)}
+
+  .rows{padding:56px 0 20px;display:grid;gap:92px}
+  .row{display:grid;gap:44px;align-items:center}
+  @media (min-width:820px){
+    .row{grid-template-columns:1fr 1fr;gap:72px}
+    .row:nth-child(even) .art{order:2}
+  }
+  .row h3{font-size:clamp(1.55rem,3.2vw,2.05rem);letter-spacing:-.015em}
+  .row p{margin-top:16px;color:var(--ink-soft);max-width:30rem}
+  .row ul{margin:22px 0 0;padding:0;list-style:none;color:var(--ink-soft)}
+  .row li{position:relative;padding-left:22px;margin-bottom:9px}
+  .row li::before{
+    content:"";position:absolute;left:0;top:.62em;
+    width:9px;height:9px;border-radius:50%;background:var(--sage);
+  }
+  .art{display:flex;justify-content:center}
+  .art img{
+    width:min(272px,70vw);border-radius:30px;
+    box-shadow:0 20px 46px rgba(30,43,31,.14);
+  }
+
+  .close{
+    margin:96px 0 0;padding:72px 0 78px;
+    background:var(--bone-deep);text-align:center;
+  }
+  .close h2{font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-.018em;max-width:18ch;margin-inline:auto}
+  .close .cta{margin-top:32px}
+  .close .fine{margin-top:14px;font-size:.92rem;color:var(--ink-soft)}
+
+  footer{padding:38px 0 54px;font-size:.9rem;color:var(--ink-soft)}
+  .foot{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;justify-content:space-between}
+  .foot nav{display:flex;flex-wrap:wrap;gap:10px 22px}
+  .foot a{text-decoration:none;border-bottom:1px solid rgba(74,90,75,.35);padding-bottom:1px}
+  .foot a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="/">Speak<span>True</span></a>
+    <a class="btn" href="https://apps.apple.com/app/id6782859072">Get it on iPhone</a>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <h1>The voice you trust most is already yours.</h1>
+    <p class="lede">SpeakTrue lets you record affirmations in your own voice and play them back whenever you need them. Not a stranger reading a script. You, saying the thing you're working towards.</p>
+    <div class="cta"><a class="btn big" href="https://apps.apple.com/app/id6782859072">Download on the App Store</a></div>
+    <p class="fine">Free to download · One-time purchase for unlimited recordings · No subscription</p>
+    <div class="shot-lead"><img src="home.png" alt="The SpeakTrue home screen showing today's affirmation with a play button and a list of saved recordings."></div>
+  </section>
+
+  <svg class="rule" viewBox="0 0 760 34" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#7C9471" stroke-width="3" stroke-linecap="round">
+      <path d="M26 13v8"/><path d="M46 9v16"/><path d="M66 4v26"/><path d="M86 11v12"/>
+      <path d="M106 7v20"/><path d="M126 14v6"/><path d="M146 3v28"/><path d="M166 10v14"/><path d="M186 15v4"/>
+      <path d="M206 6v22"/><path d="M226 12v10"/><path d="M246 2v30"/><path d="M266 13v8"/><path d="M286 8v18"/>
+      <path d="M306 15v4"/><path d="M326 5v24"/><path d="M346 11v12"/><path d="M366 14v6"/><path d="M386 3v28"/>
+      <path d="M406 9v16"/><path d="M426 13v8"/><path d="M446 6v22"/><path d="M466 15v4"/><path d="M486 10v14"/>
+      <path d="M506 4v26"/><path d="M526 12v10"/><path d="M546 14v6"/><path d="M566 7v20"/><path d="M586 11v12"/>
+      <path d="M606 15v4"/><path d="M626 5v24"/><path d="M646 13v8"/><path d="M666 9v16"/><path d="M686 14v6"/>
+      <path d="M706 11v12"/><path d="M726 15v4"/>
+    </g>
+  </svg>
+
+  <section class="wrap why">
+    <h2>Why your own voice</h2>
+    <p>Affirmations read by someone else are easy to tune out. Your own voice is harder to dismiss — you already believe the person saying it. SpeakTrue is built around that one idea and nothing else.</p>
+  </section>
+
+  <div class="wrap rows">
+
+    <section class="row">
+      <div class="art"><img src="record.png" alt="The Record screen with category chips, a text field and four suggested affirmations."></div>
+      <div>
+        <h3>Say it out loud</h3>
+        <p>Write your own affirmation or tap one of the suggestions. Then press record and speak it. Most takes are under ten seconds.</p>
+        <ul>
+          <li>Twelve categories, from Confidence to Calm to Focus</li>
+          <li>Record again as many times as you like before saving</li>
+          <li>Nothing to set up, no account to create</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="art"><img src="library.png" alt="The Library screen listing recorded affirmations with durations, hearts and category tags."></div>
+      <div>
+        <h3>1,200 affirmations to start from</h3>
+        <p>A blank page is hard. Browse the full library, search it, filter by category, and record over any line that sounds like you.</p>
+        <ul>
+          <li>Search and filter by category or by what you've recorded</li>
+          <li>Heart the ones you keep coming back to</li>
+          <li>Edit the wording so it's yours, not ours</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="art"><img src="home.png" alt="The home screen showing today's affirmation, a play button and recent recordings."></div>
+      <div>
+        <h3>Come back to it</h3>
+        <p>Each day brings up one of your affirmations to play. A reminder can nudge you at a time you pick, and a streak counts the days you show up.</p>
+        <ul>
+          <li>Play any recording back in a tap</li>
+          <li>Set the reminder for whatever time actually suits you</li>
+          <li>Your streak is the only number the app keeps score of</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="art"><img src="profile.png" alt="The profile screen showing recordings, streak, favourites and the daily reminder setting."></div>
+      <div>
+        <h3>Your voice stays on your phone</h3>
+        <p>Recordings are saved on your device and never uploaded. There's no account, no sign-in, and nothing to cancel.</p>
+        <ul>
+          <li>Free to download and try</li>
+          <li>One payment unlocks unlimited recordings, forever</li>
+          <li>No subscription, no ads, no tracking</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<section class="close">
+  <div class="wrap">
+    <h2>Record the first one this morning.</h2>
+    <div class="cta"><a class="btn big" href="https://apps.apple.com/app/id6782859072">Download on the App Store</a></div>
+    <p class="fine">Requires iPhone. Free to download.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <p>© 2026 Ahura Enterprises Pty Ltd</p>
+    <nav>
+      <a href="https://sites.google.com/view/speaktrueprivacypolicy">Privacy</a>
+      <a href="mailto:navroz@me.com">Contact</a>
+      <a href="https://apps.apple.com/app/id6782859072">App Store</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
